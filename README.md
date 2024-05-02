@@ -4,12 +4,21 @@
 
 Just using melotts in korea texts
 
-### step 1 
+### step 1 Install 
+The repo is developed and tested on `Ubuntu 20.04` and `Python 3.9`.
+
+```
+pip install -e 
+python -m unidic download
+```
+
+### step 2 Weight download
 you need to download weight in [melo hugginface](https://huggingface.co/myshell-ai/MeloTTS-Korean/tree/main).
 
 'config.json' also need to be downloaded.
 
-### step 2
+
+### step 3 Inference
 ```
 cd melo
 python infer.py -t "<TEXT EXAMPLES>" -m "<weigth_path>" -o "<result_path>" -l 'KR'
