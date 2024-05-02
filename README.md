@@ -2,7 +2,7 @@
 
 ## For korean TTS
 
-Just inference in korea text
+Just using melotts in korea texts
 
 ### step 1 
 you need to download weight in [melo hugginface](https://huggingface.co/myshell-ai/MeloTTS-Korean/tree/main).
@@ -26,9 +26,9 @@ python infer.py -t "<TEXT EXAMPLES>" -m "<weigth_path>" -o "<result_path>" -l 'K
 ```
 
 ### todo list
-* [X] ~~inference test ~~ [2024.05.02]
-* [X] ~~voice speed ~~ [2024.05.02]
-* [] train test
+* [X] inference test  [2024.05.02]
+* [X] voice speed  [2024.05.02]
+* [ ] train test
 
 
 
