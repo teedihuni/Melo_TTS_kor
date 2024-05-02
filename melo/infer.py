@@ -3,13 +3,13 @@ import click
 from melo.api import TTS
 
     
-    
 @click.command()
 @click.option('--ckpt_path', '-m', type=str, default=None, help="Path to the checkpoint file")
 @click.option('--text', '-t', type=str, default=None, help="Text to speak")
 @click.option('--language', '-l', type=str, default="EN", help="Language of the model")
 @click.option('--output_dir', '-o', type=str, default="outputs", help="Path to the output")
-def main(ckpt_path, text, language, output_dir):
+@click.option('--voice_speed' ,'-sp' , type=float, default = 1.0, help='Voice Speed')
+def main(ckpt_path, text, language, output_dir, voice_speed):
     if ckpt_path is None:
         raise ValueError("The model_path must be specified")
     
@@ -19,7 +19,7 @@ def main(ckpt_path, text, language, output_dir):
     for spk_name, spk_id in model.hps.data.spk2id.items():
         save_path = f'{output_dir}/{spk_name}/output.wav'
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
-        model.tts_to_file(text, spk_id, save_path)
+        model.tts_to_file(text, spk_id, save_path, speed = voice_speed)
 
 if __name__ == "__main__":
     main()
