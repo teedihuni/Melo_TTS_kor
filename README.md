@@ -1,16 +1,13 @@
-<div align="center">
-  <div>&nbsp;</div>
-  <img src="logo.png" width="300"/> 
-</div>
 
-## Introduction
-MeloTTS is a **high-quality multi-lingual** text-to-speech library by [MyShell.ai](https://myshell.ai). Supported languages include:
 
-TTS test (language KOREA)
+## For korean TTS
+
+Just inference in korea text
 
 ### step 1 
 you need to download weight in [melo hugginface](https://huggingface.co/myshell-ai/MeloTTS-Korean/tree/main).
-also config.json need to be downloaded.
+
+'config.json' also need to be downloaded.
 
 ### step 2
 ```
@@ -19,20 +16,29 @@ python infer.py -t "<TEXT EXAMPLES>" -m "<weigth_path>" -o "<result_path>" -l 'K
 ```
 
 you can also change voice speed.
-original infer.py do not use voice speed arguments but default speed is too slow for korea language.
-So just added speed arguments to customize. speed 1.2 fits well in korean voice.
 
+original infer.py do not use voice speed arguments but default speed is too slow for korea language.
+
+So just added speed arguments to customize. speed 1.2 fits well in korean voice.
 
 ```
 python infer.py -t "<TEXT EXAMPLES>" -m "<weigth_path>" -o "<result_path>" -l 'KR' -sp 1.3
 ```
 
+### todo list
+* [X] ~~inference test ~~ [2024.05.02]
+* [X] ~~voice speed ~~ [2024.05.02]
+* [] train test
 
 
 
+<div align="center">
+  <div>&nbsp;</div>
+  <img src="logo.png" width="300"/> 
+</div>
 
-
-
+## Introduction
+MeloTTS is a **high-quality multi-lingual** text-to-speech library by [MyShell.ai](https://myshell.ai). Supported languages include:
 
 ## Usage
 - [Use without Installation](docs/quick_use.md)
