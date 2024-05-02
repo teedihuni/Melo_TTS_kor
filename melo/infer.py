@@ -2,6 +2,12 @@ import os
 import click
 from melo.api import TTS
 
+'''
+python infer.py --text "<some text here>" -m /path/to/checkpoint/G_<iter>.pth -o <output_dir>
+
+python infer.py -t '안녕하세요. 티티에스 품질 100% 테스트 중입니다. 중요한 요소라고 생각되는 음성, 목소리, 어조를 유심히 살펴봐주시기 바랍니다.' 
+                -m ./weight/checkpoint.pth -o ../test -l 'KR' -sp 1.23
+'''
     
 @click.command()
 @click.option('--ckpt_path', '-m', type=str, default=None, help="Path to the checkpoint file")
