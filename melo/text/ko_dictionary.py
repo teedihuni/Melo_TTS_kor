@@ -4,6 +4,7 @@ etc_dictionary = {"1+1": "원플러스원", "2+1": "투플러스원"}
 
 
 english_dictionary = {
+    "B2C" : "비투씨",
     "KOREA": "코리아",
     "IDOL": "아이돌",
     "IT": "아이티",
