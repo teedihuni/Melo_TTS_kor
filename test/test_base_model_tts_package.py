@@ -1,8 +1,10 @@
 from melo.api import TTS
-from melo.text.korean import normalize_english
+from melo.text.korean import normalize
 import os
 import glob
 import sys
+import re
+import time
 
 language = 'KR'
 base_path = f'{os.getcwd()}/test'
@@ -34,8 +36,8 @@ elif 'jp' in root_folder:
     texts = open('basetts_test_resources/jp_egs_text.txt', 'r').readlines()
     language = 'JP'
 elif 'kr' in root_folder:
-    texts = open(os.path.join(base_path,'basetts_test_resources/kr_egs_text.txt'),'r').readlines()
-    texts = [normalize_english(text) for text in texts]
+    texts = open(os.path.join(base_path,'basetts_test_resources/kr_egs_text.txt'),'r').readlines()  
+    texts = [normalize(text) for text in texts]
     language = 'KR'
 else:
     raise NotImplementedError()
@@ -47,4 +49,7 @@ for speed in [1.1]:
         for sent_id, text in enumerate(texts):
             output_path = f'{save_dir}/{speaker}/speed_{speed}/sent_{sent_id:03d}.wav'
             os.makedirs(os.path.dirname(output_path), exist_ok=True)
+            start_time = time.time()
             model.tts_to_file(text, speaker_ids[speaker], output_path, speed=speed)
+            end_time = time.time()
+            print(end_time - start_time)

@@ -1,5 +1,6 @@
 __pycache__/
 .ipynb_checkpoints/
+.vscode/
 basetts_outputs_use_bert/
 basetts_outputs/
 multilingual_ckpts

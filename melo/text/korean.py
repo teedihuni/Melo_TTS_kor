@@ -10,6 +10,8 @@ from . import punctuation, symbols
 
 from num2words import num2words
 from melo.text.ko_dictionary import english_dictionary, etc_dictionary
+import importlib
+importlib.reload(english_dictionary)
 from anyascii import anyascii
 from jamo import hangul_to_jamo
 
@@ -36,7 +38,7 @@ def normalize_english(text):
             return english_dictionary.get(word)
         return word
 
-    text = re.sub("([A-Za-z]+)", fn, text)
+    text = re.sub("([A-Za-z0-9]+)", fn, text)
     return text
 
 
