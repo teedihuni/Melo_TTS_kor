@@ -19,6 +19,8 @@ you need to download weight in [melo hugginface](https://huggingface.co/myshell-
 
 
 ### step 3 Inference
+
+# method 1
 ```
 cd melo
 python infer.py -t "<TEXT EXAMPLES>" -m "<weigth_path>" -o "<result_path>" -l 'KR'
@@ -28,11 +30,51 @@ you can also change voice speed.
 
 original infer.py do not use voice speed arguments but default speed is too slow for korea language.
 
-So just added speed arguments to customize. speed 1.2 fits well in korean voice.
+So i just added speed arguments to customize. Speed 1.2 fits well in korean voice.
 
 ```
 python infer.py -t "<TEXT EXAMPLES>" -m "<weigth_path>" -o "<result_path>" -l 'KR' -sp 1.3
 ```
+
+# method 2
+```
+cd test
+python test_base_model_tts_package.py
+```
+
+if you use this method you need to add config$checkpoint arguments when you define TTS model.
+
+not just like this 'model = TTS(language=language)' but 'model = TTS(language=language, config_path=config_path, ckpt_path=ckpt_path)'
+
+### launch.json example for vscode debug 
+```
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "args": [
+                "-t","안녕하세요 TTS 품질 테스트 중입니다. 중요한 요소라고 생각되는 음성, 목소리, 어조를 유심히 살펴봐주시기 바랍니다.",
+                "-m","MeloTTS/melo/weight/checkpoint.pth",
+                "-o","MeloTTS/test/result",
+                "-l","KR",
+                "-sp","1.23"
+
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        }
+
+    ]
+}
+```
+
 
 ### todo list
 * [X] inference test  [2024.05.02]
