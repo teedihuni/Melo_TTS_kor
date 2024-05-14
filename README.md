@@ -42,7 +42,7 @@ cd test
 python test_base_model_tts_package.py
 ```
 
-if you use this method you need to add config$checkpoint arguments when you define TTS model.
+if you use this method you need to add config&checkpoint arguments when you define TTS model.
 
 not just like this 'model = TTS(language=language)' but 'model = TTS(language=language, config_path=config_path, ckpt_path=ckpt_path)'
 
