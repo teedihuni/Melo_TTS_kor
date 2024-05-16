@@ -60,7 +60,7 @@ not just like this 'model = TTS(language=language)' but 'model = TTS(language=la
             "request": "launch",
             "program": "${file}",
             "args": [
-                "-t","안녕하세요 TTS 품질 테스트 중입니다. 중요한 요소라고 생각되는 음성, 목소리, 어조를 유심히 살펴봐주시기 바랍니다.",
+                "-t","[TEXT]",
                 "-m","MeloTTS/melo/weight/checkpoint.pth",
                 "-o","MeloTTS/test/result",
                 "-l","KR",
@@ -79,7 +79,9 @@ not just like this 'model = TTS(language=language)' but 'model = TTS(language=la
 ### todo list
 * [X] inference test  [2024.05.02]
 * [X] voice speed  [2024.05.02]
-* [ ] train test
+* [ ] voice conversion (~ing)
+* [ ] train code test
+
 
 
 

@@ -6,6 +6,7 @@ import sys
 import re
 import time
 
+
 language = 'KR'
 base_path = f'{os.getcwd()}/test'
 model = TTS(language=language)
